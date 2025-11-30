@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AITutor Hub{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    {% block extra_css %}{% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">AITutor Hub</div>
+        <div class="nav-links">
+            <a href="/" {% if request.endpoint == 'index' %}class="active"{% endif %}>Home</a>
+            <a href="/courses" {% if request.endpoint == 'courses' %}class="active"{% endif %}>Courses</a>
+            <a href="/assignments" {% if request.endpoint == 'assignments' %}class="active"{% endif %}>Assignments</a>
+            <a href="/quizzes" {% if request.endpoint == 'quizzes' %}class="active"{% endif %}>Daily Quizzes</a>
+            <a href="/find-tutor" {% if request.endpoint == 'find_tutor' %}class="active"{% endif %}>Find a Tutor</a>
+            <a href="/login" class="auth-btn">Login</a>
+            <a href="/signup" class="auth-btn">Sign Up</a>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About AITutor Hub</h4>
+                <p>Your personal AI-powered learning companion for mastering machine learning concepts.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="100" cy="100" r="100" fill="url(#gradient)"/>
+    
+    <!-- AI Brain Design -->
+    <path d="M60 80 C60 60, 140 60, 140 80 C160 100, 160 120, 140 140 C140 160, 60 160, 60 140 C40 120, 40 100, 60 80" 
+          stroke="#FFFFFF" stroke-width="8" fill="none"/>
+    
+    <!-- Neural Network Connections -->
+    <circle cx="80" cy="100" r="4" fill="white"/>
+    <circle cx="120" cy="100" r="4" fill="white"/>
+    <circle cx="100" cy="80" r="4" fill="white"/>
+    <circle cx="100" cy="120" r="4" fill="white"/>
+    
+    <line x1="80" y1="100" x2="120" y2="100" stroke="white" stroke-width="2"/>
+    <line x1="100" y1="80" x2="100" y2="120" stroke="white" stroke-width="2"/>
+    <line x1="80" y1="100" x2="100" y2="80" stroke="white" stroke-width="2"/>
+    <line x1="120" y1="100" x2="100" y2="80" stroke="white" stroke-width="2"/>
+    <line x1="80" y1="100" x2="100" y2="120" stroke="white" stroke-width="2"/>
+    <line x1="120" y1="100" x2="100" y2="120" stroke="white" stroke-width="2"/>
+    
+    <!-- Gradient Definition -->
+    <defs>
+        <linearGradient id="gradient" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#7c3aed"/>
+            <stop offset="100%" stop-color="#6d28d9"/>
+        </linearGradient>
+    </defs>
+</svg> 

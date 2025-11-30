@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - AITutor Hub</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/courses.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">AITutor Hub</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="courses.html" class="active">Courses</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="quizzes.html">Daily Quizzes</a>
+            <a href="find-tutor.html">Find a Tutor</a>
+            <a href="login.html" class="auth-btn">Login</a>
+            <a href="signup.html" class="auth-btn">Sign Up</a>
+        </div>
+    </nav>
+
+    <main class="courses-main">
+        <section class="courses-hero">
+            <h1>AI/ML Courses</h1>
+            <p>Master the fundamentals and advanced concepts of AI and Machine Learning</p>
+        </section>
+
+        <section class="courses-grid">
+            <!-- Machine Learning Track -->
+            <div class="course-track">
+                <h2><i class="fas fa-brain"></i> Machine Learning</h2>
+                <div class="course-list">
+                    <div class="course-card" data-course="ml-basics">
+                        <div class="course-icon"><i class="fas fa-code"></i></div>
+                        <h3>ML Fundamentals</h3>
+                        <p>Introduction to core concepts and algorithms</p>
+                        <ul class="topics-list">
+                            <li>Supervised Learning</li>
+                            <li>Unsupervised Learning</li>
+                            <li>Model Evaluation</li>
+                        </ul>
+                        <button class="enroll-btn">Start Learning</button>
+                    </div>
+                    <div class="course-card" data-course="ml-algorithms">
+                        <div class="course-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h3>ML Algorithms</h3>
+                        <p>Deep dive into popular algorithms</p>
+                        <ul class="topics-list">
+                            <li>Linear Regression</li>
+                            <li>Decision Trees</li>
+                            <li>Random Forests</li>
+                        </ul>
+                        <button class="enroll-btn">Start Learning</button>
+                    </div>
+                    <div class="course-card" data-course="ml-advanced">
+                        <div class="course-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Advanced ML</h3>
+                        <p>Advanced techniques and optimization</p>
+                        <ul class="topics-list">
+                            <li>Ensemble Methods</li>
+                            <li>Feature Engineering</li>
+                            <li>Model Deployment</li>
+                        </ul>
+                        <button class="enroll-btn">Start Learning</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artificial Intelligence Track -->
+            <div class="course-track">
+                <h2><i class="fas fa-robot"></i> Artificial Intelligence</h2>
+                <div class="course-list">
+                    <div class="course-card" data-course="ai-basics">
+                        <div class="course-icon"><i class="fas fa-microchip"></i></div>
+                        <h3>AI Fundamentals</h3>
+                        <p>Core concepts of artificial intelligence</p>
+                        <ul class="topics-list">
+                            <li>Problem Solving</li>
+                            <li>Knowledge Representation</li>
+                            <li>Expert Systems</li>
+                        </ul>
+                        <button class="enroll-btn">Start Learning</button>
+                    </div>
+                    <div class="course-card" data-course="deep-learning">
+                        <div class="course-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Deep Learning</h3>
+                        <p>Neural networks and deep learning</p>
+                        <ul class="topics-list">
+                            <li>Neural Networks</li>
+                            <li>CNN & RNN</li>
+                            <li>Transfer Learning</li>
+                        </ul>
+                        <button class="enroll-btn">Start Learning</button>
+                    </div>
+                    <div class="course-card" data-course="nlp">
+                        <div class="course-icon"><i class="fas fa-language"></i></div>
+                        <h3>Natural Language Processing</h3>
+                        <p>Text processing and understanding</p>
+                        <ul class="topics-list">
+                            <li>Text Processing</li>
+                            <li>Sentiment Analysis</li>
+                            <li>Language Models</li>
+                        </ul>
+                        <button class="enroll-btn">Start Learning</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/courses.js"></script>
+</body>
+</html> 

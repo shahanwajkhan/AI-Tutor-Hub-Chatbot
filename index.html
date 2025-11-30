@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITutor Hub - Learn AI/ML Concepts</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/chatbot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">AITutor Hub</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="quizzes.html">Daily Quizzes</a>
+            <a href="find-tutor.html">Find a Tutor</a>
+            <a href="login.html" class="auth-btn">Login</a>
+            <a href="signup.html" class="auth-btn">Sign Up</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Master AI/ML Concepts with AITutor Hub</h1>
+                <p>Interactive learning with AI-powered assistance</p>
+                <button class="cta-button">Get Started</button>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Chatbot</h3>
+                    <p>24/7 assistance for your ML queries</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Daily Quizzes</h3>
+                    <p>Test your knowledge regularly</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Expert Tutors</h3>
+                    <p>Learn from curated video content</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Assignments</h3>
+                    <p>Practice with hands-on projects</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About AITutor Hub</h4>
+                <p>Your personal AI-powered learning companion for mastering machine learning concepts.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Learning Assistant Chatbot -->
+    <div class="chatbot-container">
+        <!-- Chatbot Button -->
+        <button class="chatbot-button" id="chatbotButton">
+            <div class="chatbot-button-avatar">
+                <img src="assets/ai-assistant-avatar.svg" alt="AI Assistant" class="chatbot-icon">
+            </div>
+        </button>
+
+        <!-- Chatbot Window -->
+        <div class="chatbot-window" id="chatbotWindow">
+            <!-- Chatbot Header -->
+            <div class="chatbot-header">
+                <div class="chatbot-avatar">
+                    <img src="assets/ai-assistant-avatar.svg" alt="AI Assistant" class="avatar-img">
+                    <div class="avatar-status"></div>
+                </div>
+                <div class="chatbot-title">
+                    <h3>AI Learning Assistant</h3>
+                    <p>Online • Ready to help</p>
+                </div>
+            </div>
+
+            <!-- Chatbot Messages -->
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot">
+                    <div class="message-avatar">
+                        <img src="assets/ai-assistant-avatar.svg" alt="AI Assistant" class="message-avatar-img">
+                    </div>
+                    <div class="message-content">
+                        Hi! I'm your AI/ML learning assistant. What would you like to learn about today?
+                    </div>
+                </div>
+                <div class="message bot">
+                    <div class="message-avatar">
+                        <img src="assets/ai-assistant-avatar.svg" alt="AI Assistant" class="message-avatar-img">
+                    </div>
+                    <div class="message-content">
+                        Here are some topics we can explore:
+                        <div class="topic-buttons">
+                            <button class="topic-button" data-topic="Machine Learning Fundamentals">Machine Learning Fundamentals</button>
+                            <button class="topic-button" data-topic="Linear Regression">Linear Regression</button>
+                            <button class="topic-button" data-topic="Deep Neural Networks">Deep Neural Networks</button>
+                            <button class="topic-button" data-topic="Python">Python</button>
+                            <button class="topic-button" data-topic="Overfitting">Overfitting</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chatbot Input -->
+            <div class="chatbot-input">
+                <input type="text" placeholder="Ask anything about AI/ML..." id="chatbotInput">
+                <button id="chatbotSend">
+                    <svg viewBox="0 0 24 24" fill="white" width="20" height="20">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load JavaScript -->
+    <script src="js/chatbot.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html> 

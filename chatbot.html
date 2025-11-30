@@ -1,0 +1,64 @@
+<!-- AI Learning Assistant Chatbot -->
+<div class="chatbot-container">
+    <!-- Chatbot Button -->
+    <button class="chatbot-button" id="chatbotButton">
+        <div class="chatbot-button-avatar">
+            <img src="assets/ai-assistant-avatar.svg" alt="AI Assistant" class="chatbot-icon">
+        </div>
+    </button>
+
+    <!-- Chatbot Window -->
+    <div class="chatbot-window" id="chatbotWindow">
+        <!-- Chatbot Header -->
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">
+                <img src="assets/ai-assistant-avatar.svg" alt="AI Assistant" class="avatar-img">
+                <div class="avatar-status"></div>
+            </div>
+            <div class="chatbot-title">
+                <h3>AI Learning Assistant</h3>
+                <p>Online • Ready to help</p>
+            </div>
+        </div>
+
+        <!-- Chatbot Messages -->
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot">
+                <div class="message-avatar">
+                    <img src="assets/ai-assistant-avatar.svg" alt="AI Assistant" class="message-avatar-img">
+                </div>
+                <div class="message-content">
+                    Hi! I'm your AI/ML learning assistant. What would you like to learn about today?
+                </div>
+            </div>
+            <div class="message bot">
+                <div class="message-avatar">
+                    <img src="assets/ai-assistant-avatar.svg" alt="AI Assistant" class="message-avatar-img">
+                </div>
+                <div class="message-content">
+                    Here are some topics we can explore:
+                    <div class="topic-buttons">
+                        <button class="topic-button" data-topic="Machine Learning Fundamentals">Machine Learning Fundamentals</button>
+                        <button class="topic-button" data-topic="Linear Regression">Linear Regression</button>
+                        <button class="topic-button" data-topic="Deep Neural Networks">Deep Neural Networks</button>
+                        <button class="topic-button" data-topic="Python">Python</button>
+                        <button class="topic-button" data-topic="Overfitting">Overfitting</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chatbot Input -->
+        <div class="chatbot-input">
+            <input type="text" placeholder="Ask anything about AI/ML..." id="chatbotInput">
+            <button id="chatbotSend">
+                <svg viewBox="0 0 24 24" fill="white" width="20" height="20">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Load JavaScript -->
+<script type="module" src="../js/chatbot.js"></script> 

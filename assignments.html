@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments - AITutor Hub</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/courses.css">
+    <link rel="stylesheet" href="styles/assignments.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">AITutor Hub</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="assignments.html" class="active">Assignments</a>
+            <a href="quizzes.html">Daily Quizzes</a>
+            <a href="find-tutor.html">Find a Tutor</a>
+            <a href="login.html" class="auth-btn">Login</a>
+            <a href="signup.html" class="auth-btn">Sign Up</a>
+        </div>
+    </nav>
+
+    <main class="assignments-main">
+        <section class="assignments-hero">
+            <h1>Course Assignments</h1>
+            <p>Complete assignments to test your knowledge and build your portfolio</p>
+        </section>
+
+        <section class="assignments-controls">
+            <div class="search-filter">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="assignment-search" placeholder="Search assignments...">
+                </div>
+                <div class="filter-options">
+                    <select id="course-filter">
+                        <option value="">All Courses</option>
+                        <option value="ml-basics">ML Fundamentals</option>
+                        <option value="ml-algorithms">ML Algorithms</option>
+                        <option value="ml-advanced">Advanced ML</option>
+                        <option value="deep-learning">Deep Learning</option>
+                        <option value="nlp">Natural Language Processing</option>
+                    </select>
+                    <select id="difficulty-filter">
+                        <option value="">All Difficulties</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+            </div>
+            <div class="view-toggle">
+                <button class="active" data-view="grid">
+                    <i class="fas fa-th-large"></i> Grid
+                </button>
+                <button data-view="list">
+                    <i class="fas fa-list"></i> List
+                </button>
+            </div>
+        </section>
+
+        <section class="assignments-grid" id="assignments-container">
+            <!-- Assignments will be dynamically loaded here -->
+        </section>
+
+        <section class="assignments-summary">
+            <div class="summary-card">
+                <i class="fas fa-tasks"></i>
+                <h3>Total Assignments</h3>
+                <p id="total-assignments">0</p>
+            </div>
+            <div class="summary-card">
+                <i class="fas fa-check-circle"></i>
+                <h3>Completed</h3>
+                <p id="completed-assignments">0</p>
+            </div>
+            <div class="summary-card">
+                <i class="fas fa-clock"></i>
+                <h3>Pending</h3>
+                <p id="pending-assignments">0</p>
+            </div>
+            <div class="summary-card">
+                <i class="fas fa-star"></i>
+                <h3>Total Points</h3>
+                <p id="total-points">0</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts/assignments.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+        // Initialize the assignments page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load all assignments
+            const container = document.getElementById('assignments-container');
+            let totalPoints = 0;
+            let totalAssignments = 0;
+
+            // Iterate through all courses and their assignments
+            for (const [courseId, courseData] of Object.entries(assignmentData)) {
+                courseData.assignments.forEach(assignment => {
+                    totalAssignments++;
+                    totalPoints += assignment.points;
+
+                    const assignmentCard = document.createElement('div');
+                    assignmentCard.className = 'assignment-card';
+                    assignmentCard.dataset.course = courseId;
+                    assignmentCard.innerHTML = `
+                        <div class="assignment-header">
+                            <h3>${assignment.title}</h3>
+                            <span class="points">${assignment.points} points</span>
+                        </div>
+                        <div class="course-tag">${courseData.title}</div>
+                        <p class="description">${assignment.description}</p>
+                        <div class="requirements">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                ${assignment.requirements.map(req => `
+                                    <li>${req}</li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                        <div class="assignment-footer">
+                            <div class="deadline">
+                                <i class="far fa-clock"></i> Deadline: ${assignment.deadline}
+                            </div>
+                            <div class="submission-type">
+                                <i class="fas fa-file-code"></i> ${assignment.submissionType}
+                            </div>
+                        </div>
+                        <div class="assignment-actions">
+                            <button class="download-btn" data-assignment="${assignment.id}">
+                                <i class="fas fa-download"></i> Download Resources
+                            </button>
+                            <button class="submit-btn" data-assignment="${assignment.id}">
+                                <i class="fas fa-paper-plane"></i> Submit Assignment
+                            </button>
+                        </div>
+                    `;
+
+                    container.appendChild(assignmentCard);
+                });
+            }
+
+            // Update summary statistics
+            document.getElementById('total-assignments').textContent = totalAssignments;
+            document.getElementById('total-points').textContent = totalPoints;
+            document.getElementById('pending-assignments').textContent = totalAssignments; // Initially all pending
+            document.getElementById('completed-assignments').textContent = '0'; // Initially none completed
+
+            // Handle search
+            const searchInput = document.getElementById('assignment-search');
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const assignments = document.querySelectorAll('.assignment-card');
+                
+                assignments.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const description = card.querySelector('.description').textContent.toLowerCase();
+                    const shouldShow = title.includes(searchTerm) || description.includes(searchTerm);
+                    card.style.display = shouldShow ? 'block' : 'none';
+                });
+            });
+
+            // Handle course filtering
+            const courseFilter = document.getElementById('course-filter');
+            courseFilter.addEventListener('change', (e) => {
+                const selectedCourse = e.target.value;
+                const assignments = document.querySelectorAll('.assignment-card');
+                
+                assignments.forEach(card => {
+                    if (!selectedCourse || card.dataset.course === selectedCourse) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+
+            // Handle view toggle
+            const viewButtons = document.querySelectorAll('.view-toggle button');
+            const assignmentsContainer = document.getElementById('assignments-container');
+            
+            viewButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    viewButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const view = button.dataset.view;
+                    assignmentsContainer.className = view === 'grid' ? 'assignments-grid' : 'assignments-list';
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

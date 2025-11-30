@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Quizzes - AITutor Hub</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/quizzes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">AITutor Hub</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="quizzes.html" class="active">Daily Quizzes</a>
+            <a href="find-tutor.html">Find a Tutor</a>
+            <a href="login.html" class="auth-btn">Login</a>
+            <a href="signup.html" class="auth-btn">Sign Up</a>
+        </div>
+    </nav>
+
+    <main class="quizzes-main">
+        <section class="quiz-hero">
+            <h1>Daily Quiz Challenge</h1>
+            <p>Test your knowledge with daily quizzes from your courses</p>
+        </section>
+
+        <section class="quiz-stats">
+            <div class="stat-card">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Streak</h3>
+                <p id="quiz-streak">0 days</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-star"></i>
+                <h3>Total Score</h3>
+                <p id="total-score">0 points</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Accuracy</h3>
+                <p id="accuracy">0%</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-trophy"></i>
+                <h3>Best Score</h3>
+                <p id="best-score">0%</p>
+            </div>
+        </section>
+
+        <section class="quiz-container" id="quiz-container">
+            <!-- Quiz content will be dynamically loaded here -->
+        </section>
+
+        <section class="quiz-history" id="quiz-history">
+            <h2>Previous Attempts</h2>
+            <div class="history-container">
+                <!-- Quiz history will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts/quizzes.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html> 
